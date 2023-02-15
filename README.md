@@ -1,1 +1,2 @@
-# IP3_Group9
+# Integrate Project 3 - Group 9
+A website that uses NASA APIs to...
