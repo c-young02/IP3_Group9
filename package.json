@@ -1,0 +1,22 @@
+{
+  "name": "nasa_api",
+  "version": "1.0.0",
+  "description": "Use NASA APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c-young02/IP3_Group9.git"
+  },
+  "author": "Lauren Britton, Dionne Byrne, Stacey Cameron, Darren Hillhouse, Logan McLachlan, Callum Young",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c-young02/IP3_Group9/issues"
+  },
+  "homepage": "https://github.com/c-young02/IP3_Group9#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
