@@ -4,10 +4,8 @@ using System;
 
 namespace NasaAPITest
 {
-    // stores info on an asteroid query and its results
     public class AsteriodQuery
     {
-        // sets the queries properties
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
         public string id { get; set; }
@@ -17,8 +15,7 @@ namespace NasaAPITest
             DateTime? endDateIn = null,
             string idIn = null)
         {
-            // if no dates are given, set to today
-            // done this way to work around a limitation
+            
             if (startDateIn != null)
             {
                 startDate = (DateTime)startDateIn;
@@ -37,7 +34,6 @@ namespace NasaAPITest
                 endDate = DateTime.Today;
             }
 
-            // sets the id
             id = idIn;
         }
     }
