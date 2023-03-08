@@ -13,7 +13,6 @@ namespace NasaAPITest
     {
         public async Task<AsteroidModel> LoadAsteroids(AsteriodQuery query)
         {
-            // initializes the url
             string url = "";
 
             // check what type of query is to be executed
@@ -33,12 +32,10 @@ namespace NasaAPITest
                         // parses string result into an object
                         AsteroidModel asteroids = JsonConvert.DeserializeObject<AsteroidModel>(result);
 
-                        // returns result
                         return asteroids;
                     }
                     else
                     {
-                        // if the response wasnt successful it throws an error
                         throw new Exception(response.ReasonPhrase);
                     }
                 }
@@ -66,12 +63,10 @@ namespace NasaAPITest
                         asteroids.near_earth_objects = new Dictionary<string,List<Asteroid>>();                        
                         asteroids.near_earth_objects.Add("asteroid", asteroidList);
 
-                        // returns result
                         return asteroids;
                     }
                     else
                     {
-                        // if the response wasnt successful it throws an error
                         throw new Exception(response.ReasonPhrase);
                     }
                 }
