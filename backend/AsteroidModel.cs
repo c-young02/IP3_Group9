@@ -6,40 +6,52 @@ namespace NasaAPITest
 {
     public class AsteroidModel
     {
-        public Dictionary<string,List<Asteroid>> near_earth_objects { get; set; }
+        [JsonProperty("near_earth_objects")]
+        public Dictionary<string,List<Asteroid>> NearEarthObjects { get; set; }
     }
 
     public class Asteroid
     {
-        public string id { get; set; }
-        public string name { get; set; }
-        public Estimated_Diameter estimated_diameter { get; set; }
-        public bool is_potentially_hazardous_asteroid { get; set; }
-        public Close_Approach_Data[] close_approach_data { get; set; }
+        [JsonProperty("id")]
+        public string Id { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
+        [JsonProperty("estimated_diameter")]
+        public Estimated_Diameter EstimatedDiameter { get; set; }
+        [JsonProperty("is_potentially_hazardous_asteroid")]
+        public bool PotentiallyHazardous { get; set; }
+        [JsonProperty("close_approach_data")]
+        public Close_Approach_Data[] CloseApproachData { get; set; }
     }
 
-        public class Estimated_Diameter
+    public class Estimated_Diameter
     {
         public Meters meters { get; set; }
     }
 
-
+    // diameter mesurement
     public class Meters
     {
-        public float estimated_diameter_min { get; set; }
-        public float estimated_diameter_max { get; set; }
+        [JsonProperty("estimated_diameter_min")]
+        public float DiameterMin { get; set; }
+        [JsonProperty("estimated_diameter_max")]
+        public float DiameterMax { get; set; }
     }
 
     public class Close_Approach_Data
     {
-        public string close_approach_date { get; set; }
-        public Relative_Velocity relative_velocity { get; set; }
-        public Miss_Distance miss_distance { get; set; }
+        [JsonProperty("close_approach_date")]
+        public string ApproachDate { get; set; }
+        [JsonProperty("relative_velocity")]
+        public Relative_Velocity Velocity { get; set; }
+        [JsonProperty("miss_distance")]
+        public Miss_Distance MissDistance { get; set; }
     }
 
     public class Relative_Velocity
     {
-        public string kilometers_per_second { get; set; }
+        [JsonProperty("kilometers_per_second")]
+        public string KilometersPerSecond { get; set; }
     }
 
     public class Miss_Distance
