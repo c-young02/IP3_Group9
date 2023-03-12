@@ -1,6 +1,7 @@
 ﻿// author(s): logan mclachlan
 
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace NasaAPITest
 {
