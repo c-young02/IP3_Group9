@@ -1,40 +1,48 @@
-﻿// author(s): logan mclachlan
+// author(s): logan mclachlan
 
 using System;
 
 namespace NasaAPITest
 {
+    // stores info on an asteroid query and its results
     public class AsteriodQuery
     {
-        public DateTime startDate { get; set; }
-        public DateTime endDate { get; set; }
-        public string id { get; set; }
+        // sets the queries properties
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string Id { get; set; }
+        public bool PotentiallyDangerouse { get; set; } 
 
         // constructor, parameters are optional and have defualt values
         public AsteriodQuery(DateTime? startDateIn = null,
             DateTime? endDateIn = null,
+            bool potentiallyDangerousIn = false,
             string idIn = null)
         {
-            
+            // if no dates are given, set to today
+            // done this way to work around a limitation
             if (startDateIn != null)
             {
-                startDate = (DateTime)startDateIn;
+                StartDate = (DateTime)startDateIn;
             }
             else
             {
-                startDate = DateTime.Today;
+                StartDate = DateTime.Today;
             }
 
-            if (endDateIn != null)
+            int dateDifferanceLimit = 7;
+
+            if (endDateIn == null || ((DateTime)endDateIn - StartDate).TotalDays > dateDifferanceLimit)
             {
-                endDate = (DateTime)endDateIn;
+                EndDate = StartDate.AddDays(dateDifferanceLimit);
             }
             else
             {
-                endDate = DateTime.Today;
+                EndDate = (DateTime)endDateIn;
             }
 
-            id = idIn;
+            PotentiallyDangerouse = potentiallyDangerousIn;
+            Id = idIn;
         }
     }
 }
