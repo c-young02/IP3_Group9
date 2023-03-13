@@ -1,4 +1,6 @@
 import Map, { Marker } from 'react-map-gl';
+import './map.css';
+import { FaFire } from 'react-icons/fa';
 
 function MapComp() {
 	return (
@@ -7,7 +9,8 @@ function MapComp() {
 			initialViewState={{ latitude: 55.8668, longitude: -4.25, zoom: 6 }}
 			style={{ width: '100vw', height: '100vh' }}
 			mapStyle="mapbox://styles/c-young02/clf2kthzf006g01ln8gmkfiv0"
-		> (//creates markers on the map)
+		>
+			{/* creates markers on the map */}
 			<Marker latitude={55} longitude={-4} anchor="center">
 				<button className="marker-btn">
 					<img src="..\images\snow.png" alt="Snow Icon" />
