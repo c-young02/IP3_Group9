@@ -79,7 +79,7 @@ function Navbar() {
 									}
 									onClick={closeMobileMenu}
 								>
-									Mars rover
+									Mars Rover
 								</NavLink>
 							</li>
 						</ul>
