@@ -12,7 +12,7 @@ namespace NasaAPITest
         public async static Task<EventModel> LoadEvents()
         {
             int numOfEvents = 10;
-            string url = $"https://eonet.gsfc.nasa.gov/api/v2.1/events?limit={ numOfEvents }";
+            string url = $"https://eonet.gsfc.nasa.gov/api/v2.1/events?limit={numOfEvents}";
 
             // open a new call using the apiclint
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
@@ -32,6 +32,5 @@ namespace NasaAPITest
                 }
             }
         }
-
     }
 }
