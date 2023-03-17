@@ -1,10 +1,5 @@
 import { useState } from 'react';
-import Map, {
-	Marker,
-	GeolocateControl,
-	FullscreenControl,
-	Popup,
-} from 'react-map-gl';
+import Map, { Marker, GeolocateControl, FullscreenControl } from 'react-map-gl';
 import './map.css';
 import markers from './test.json';
 
@@ -37,7 +32,6 @@ function MapComp() {
 				trackUserLocation={true}
 				label="Find My Location"
 			/>
-
 			{/* creates markers on the map from test file*/}
 			{markers.events.map((disaster) => (
 				<Marker
@@ -56,15 +50,20 @@ function MapComp() {
 					</button>
 				</Marker>
 			))}
-
-			{selectedEvent ? (
-				<Popup
-					latitude={selectedEvent.geometries[0].coordinates[1]}
-					longitude={selectedEvent.geometries[0].coordinates[0]}
-				></Popup>
-			) : null}
-
-			{/* example markers */}
+			{/*Displays info on clicked event on an alert*/}
+			{selectedEvent
+				? (alert(
+						JSON.stringify(selectedEvent.title) +
+							'\nType: ' +
+							JSON.stringify(selectedEvent.categories[0].title) +
+							'\nLatitude: ' +
+							JSON.stringify(selectedEvent.geometries[0].coordinates[1]) +
+							'\nLongitude: ' +
+							JSON.stringify(selectedEvent.geometries[0].coordinates[0])
+				  ),
+				  setSelectedEvent(null))
+				: null}
+			;{/* example markers */}
 			<Marker latitude={55} longitude={-4} anchor="center">
 				<button className="marker-btn">
 					<img src="..\images\snow.png" alt="Snow Icon" />
