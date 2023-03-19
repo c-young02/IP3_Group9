@@ -24,7 +24,7 @@ function Navbar() {
 							onClick={closeMobileMenu}
 						>
 							<GiBurningMeteor className="thenavbar-icon" />
-							Project Title
+							NASA APIs
 						</Link>
 						<div className="menu-icon" onClick={handleClick}>
 							{click ? <FaTimes /> : <FaBars />}
