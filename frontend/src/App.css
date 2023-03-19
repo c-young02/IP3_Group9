@@ -21,7 +21,7 @@
 }
 .events {
     display: flex;
-    height: 95vh;
+    height: 94vh;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
@@ -45,7 +45,8 @@
 @media screen and (max-width: 960px) {
   .home,
   .about,
-  .contact {
+  .meteors,
+  .rover {
     font-size: 2.5rem;
   }
 
