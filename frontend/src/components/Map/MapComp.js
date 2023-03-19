@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Map, { Marker, GeolocateControl, FullscreenControl } from 'react-map-gl';
 import './map.css';
-import markers from './test.json';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -24,6 +23,20 @@ function MapComp() {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
+	//Fetches data from the EONET API
+	const [event, setEvent] = useState([]);
+	async function fetchEvent() {
+		const res = await fetch(
+			`https://eonet.gsfc.nasa.gov/api/v2.1/events?days=30`
+		);
+		const { events } = await res.json();
+		setEvent(events);
+	}
+
+	useEffect(() => {
+		fetchEvent();
+	}, []);
+
 	return (
 		//Creates map
 		<Map
@@ -42,7 +55,7 @@ function MapComp() {
 				label="Find My Location"
 			/>
 			{/* creates markers on the map from test file*/}
-			{markers.events.map((disaster) => (
+			{event.map((disaster) => (
 				<Marker
 					key={disaster.id}
 					latitude={disaster.geometries[0].coordinates[1]}
