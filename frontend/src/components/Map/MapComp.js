@@ -121,32 +121,38 @@ function MapComp() {
 			{/* When events button is pressed opens a section from off the screen */}
 			<Offcanvas show={list} onHide={closeList}>
 				<Offcanvas.Header closeButton>
-					<Offcanvas.Title>Events</Offcanvas.Title>
+					<Offcanvas.Title>
+						<h2>Events</h2>
+					</Offcanvas.Title>
 				</Offcanvas.Header>
 				<Offcanvas.Body>
 					{/* Headings for the sections */}
 
-					<div className="row">
-						<div className="col-1"></div>
-						<div className="col-6">Title</div>
-						<div className="col-5">Date</div>
+					<div className="table table-hover">
+						<thead>
+							<tr>
+								<td> Icon </td>
+								<td> Name </td>
+								<td> Date/Time </td>
+							</tr>
+						</thead>
+						<tbody>
+							{/* Maps out objects from the array into the table */}
+							{event.map((list) => (
+								<tr key={list.id}>
+									<td>
+										<img
+											className="list-icon"
+											src={`../images/${list.categories[0].id}.png`}
+											alt="Icon"
+										/>{' '}
+									</td>
+									<td> {list.title} </td>
+									<td> {list.geometries[0].date} </td>
+								</tr>
+							))}
+						</tbody>
 					</div>
-					<hr />
-					{/* Maps out objects from the array into the list */}
-
-					{event.map((list) => (
-						<div className="row" key={list.id}>
-							<div className="col-1">
-								<img
-									className="list-icon"
-									src={`../images/${list.categories[0].id}.png`}
-									alt="Icon"
-								/>
-							</div>
-							<div className="col-6">{list.title}</div>
-							<div className="col-5">{list.geometries[0].date}</div>
-						</div>
-					))}
 				</Offcanvas.Body>
 			</Offcanvas>
 		</Map>
