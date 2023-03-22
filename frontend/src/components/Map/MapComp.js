@@ -1,12 +1,6 @@
 import { useEffect, useState } from 'react';
-import Map, {
-	Marker,
-	GeolocateControl,
-	FullscreenControl,
-	NavigationControl,
-} from 'react-map-gl';
+import Map, { Marker, GeolocateControl, NavigationControl } from 'react-map-gl';
 import './map.css';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -16,7 +10,7 @@ function MapComp() {
 	const [event, setEvent] = useState([]);
 	async function fetchEvent() {
 		const res = await fetch(
-			`https://eonet.gsfc.nasa.gov/api/v2.1/events?days=30`
+			`https://eonet.gsfc.nasa.gov/api/v2.1/events?days=30000`
 		);
 		const { events } = await res.json();
 		setEvent(events);
@@ -64,8 +58,6 @@ function MapComp() {
 			>
 				Events
 			</button>
-			{/* Adds ability to go fullscreen */}
-			<FullscreenControl />
 			{/* Adds navigation controls */}
 			<NavigationControl />
 			{/* lets map centre on users location */}
@@ -111,9 +103,9 @@ function MapComp() {
 							JSON.stringify(selectedEvent.geometries[0].coordinates[0])}
 					</Modal.Body>
 					<Modal.Footer>
-						<Button variant="secondary" onClick={handleClose}>
+						<button className="btn btn-secondary" onClick={handleClose}>
 							Close
-						</Button>
+						</button>
 					</Modal.Footer>
 				</Modal>
 			) : null}
