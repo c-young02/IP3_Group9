@@ -1,10 +1,10 @@
 import React from 'react';
+import RoverComp from '../components/Rover/RoverComp';
 
 function Rover() {
 	return (
 		<div className="rover">
-			{' '}
-			<h1>Mars Rover</h1>
+			<RoverComp />
 		</div>
 	);
 }
