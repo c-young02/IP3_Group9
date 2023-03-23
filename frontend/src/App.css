@@ -8,9 +8,18 @@
 }
 
 .home,
-.about,
-.meteors,
 .rover {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background-color: #323a45;
+  color: #fff;
+}
+
+.about,
+.meteors {
   display: flex;
   height: 90vh;
   align-items: center;
