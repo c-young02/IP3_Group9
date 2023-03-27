@@ -1,9 +1,10 @@
 import React from 'react';
+import MeteorsComp from '../components/Meteors/MeteorsComp';
 
 function Meteors() {
 	return (
 		<div className="meteors">
-			<h1>Meteors</h1>
+			<MeteorsComp />
 		</div>
 	);
 }
