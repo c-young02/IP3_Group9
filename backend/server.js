@@ -31,9 +31,10 @@ app.get('/api/rover', (req,res) => {
         console.log(data);
         console.log(newData);
         res.send(newData)              
-    });
+    }).catch(err => console.log(err))
+});
        
-})
+
 // APOD API
 app.get('/api/apod', (req,res) => {
      fetch(apod_url_key)
@@ -41,12 +42,19 @@ app.get('/api/apod', (req,res) => {
     .then(body => {
     console.log(body)
     res.send(body);
-    })
-    })
+    }).catch(err => console.log(err))
+ });
 
+ // Error
+app.use(function(req, res){
+    res.status(404);
+    res.send('We didn\'t find what you were looking for.');
+})
 
-
-
+app.use(function(req, res){
+    res.status(500);
+    res.send('Internal server error');
+})
 
 
 app.listen(PORT, () => console.log('Back end server running on PORT ${PORT}'));
