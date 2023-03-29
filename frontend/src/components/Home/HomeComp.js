@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 function HomeComp() {
 
   useEffect(() => {
-    fetch("https://api.nasa.gov/planetary/apod?api_key=N19AA6NPWqnzmEEazzX9ZamcIOcTgTfvqL1LKaf3")
+    fetch(`http://localhost:8000/api/apod`)
       .then(res => res.json())
       .then(data => {
+        console.log(data)
         setData(data)
       })
       .catch(err => {

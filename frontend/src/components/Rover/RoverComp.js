@@ -3,14 +3,13 @@ import { useEffect, useState } from "react";
 const RoverComp = () => {
 
     async function fetchEvent() {
-		const res = await fetch(
-			`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=lRXxtWUBBCnscvyH4Ejauz3dGMckJr7gOXyY4BEu`
-		);
+		const res = await fetch(`http://localhost:8000/api/rover`);
         const fetchData = await res.json()
-        const fetchData2 = fetchData.photos.slice(0,3)
-        setData(fetchData2.map(arrayItem => {
+       // const fetchData2 = fetchData.photos.slice(0,3)
+       /*  setData(fetchData.map(arrayItem => {
             return arrayItem.img_src
-        }))
+        })) */
+        setData(fetchData)
         .catch(err => {
             console.log(err)
         })
