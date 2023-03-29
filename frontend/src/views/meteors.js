@@ -8,5 +8,4 @@ function Meteors() {
 		</div>
 	);
 }
-
 export default Meteors;

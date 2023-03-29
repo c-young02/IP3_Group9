@@ -3,12 +3,12 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar/navbar';
 import './App.css';
-import Home from './routes/home';
-import Meteors from './routes/meteors';
-import Events from './routes/events';
-import About from './routes/about';
-import Rover from './routes/rover';
-import ErrorPage from './routes/errorPage';
+import Home from './views/home';
+import Meteors from './views/meteors';
+import Events from './views/events';
+import About from './views/about';
+import Rover from './views/rover';
+import ErrorPage from './views/errorPage';
 
 const AppLayout = () => {
 	return (

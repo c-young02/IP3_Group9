@@ -6,11 +6,13 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function MapComp() {
+	document.title = 'Earth Events';
+
 	//Fetches data from the EONET API
 	const [event, setEvent] = useState([]);
 	async function fetchEvent() {
 		const res = await fetch(
-			`https://eonet.gsfc.nasa.gov/api/v2.1/events?days=30000`
+			`https://eonet.gsfc.nasa.gov/api/v2.1/events?days=365`
 		);
 		const { events } = await res.json();
 		setEvent(events);
@@ -135,6 +137,7 @@ function MapComp() {
 									<td>
 										<img
 											className="list-icon"
+											//All images acquired from https://www.flaticon.com/icons
 											src={`../images/${list.categories[0].id}.png`}
 											alt="Icon"
 										/>{' '}
