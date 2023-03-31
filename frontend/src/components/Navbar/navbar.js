@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
-import { GiBurningMeteor } from 'react-icons/gi';
-
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { NavLink } from 'react-router-dom';
@@ -23,7 +21,11 @@ function Navbar() {
 							className="thenavigationbar-logo"
 							onClick={closeMobileMenu}
 						>
-							<GiBurningMeteor className="thenavbar-icon" />
+							<img
+								src="../images/logo.svg"
+								className="thenavigationbar-icon"
+								alt="logo"
+							/>
 							NASA APIs
 						</Link>
 						<div className="menu-icon" onClick={handleClick}>
