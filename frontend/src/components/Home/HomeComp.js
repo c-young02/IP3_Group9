@@ -15,7 +15,7 @@ function HomeComp() {
 			.catch((err) => {
 				console.log(err);
 			});
-	}, []);
+	}, [APOD]);
 
 	const [data, setData] = useState([]);
 

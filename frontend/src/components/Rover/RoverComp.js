@@ -1,47 +1,41 @@
 import { useEffect, useState } from 'react';
+import React from 'react';
+import Carousel from 'react-bootstrap/Carousel';
 
-const RoverComp = () => {
-	document.title = 'Mars Rover Images';
-	const roverImages = process.env.REACT_APP_MARS_KEY;
-	async function fetchEvent() {
-		const res = await fetch(roverImages);
-		const fetchImages = await res.json();
-		const fetchImages2 = fetchImages.photos.slice(0, 5);
-		setImages(
-			fetchImages2.map((arrayItem) => {
-				return arrayItem.img_src;
-			})
-		).catch((err) => {
-			console.log(err);
-		});
-	}
+function RoverComp() {
+    document.title = 'Mars Rover Images';
+    const roverImages = process.env.REACT_APP_MARS_KEY;
 
-	useEffect(() => {
-		fetchEvent();
-	}, []);
+    //Fetches data from the Mars Rover API
+    const [rover, setRover] = useState([]);
+    async function fetchRover() {
+        const res = await fetch(roverImages);
+        const { photos } = await res.json();
+        setRover(photos);
+    }
 
-	const [images, setImages] = useState([]);
+    useEffect(() => {
+        fetchRover();
+    }, []);
 
-	return (
-		<div className="Container">
-			<h1 className="text-center">Mars Rover Images</h1>
-			{images.map((temp, index) => {
-				return (
-					<picture>
-						<div class="col">
-							<img
-								width="125px"
-								key={index}
-								src={temp}
-								alt=""
-								class="img-fluid img-thumbnail img-responsive"
+    return (
+        <div className="Container">
+            <h1 className="text-center">Mars Rover Images</h1>
+            <div style= {{ display: 'block', width: 500, padding: 30 }}>
+                <Carousel>
+                    {rover?.map((rover) => (
+                        <Carousel.Item key={rover.id} interval={null}>
+                            <img 
+								className="d-block w-100 h-100"
+								src={rover.img_src} 
+								alt="Rover Images"
 							/>
-						</div>
-					</picture>
-				);
-			})}
-		</div>
-	);
-};
+                        </Carousel.Item>
+                    ))}
+                </Carousel>
+            </div>
+        </div>
+    );
+}
 
 export default RoverComp;
