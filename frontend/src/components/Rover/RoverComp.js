@@ -2,11 +2,9 @@ import { useEffect, useState } from 'react';
 
 const RoverComp = () => {
 	document.title = 'Mars Rover Images';
-
+	const roverImages = process.env.REACT_APP_MARS_KEY;
 	async function fetchEvent() {
-		const res = await fetch(
-			`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=lRXxtWUBBCnscvyH4Ejauz3dGMckJr7gOXyY4BEu`
-		);
+		const res = await fetch(roverImages);
 		const fetchImages = await res.json();
 		const fetchImages2 = fetchImages.photos.slice(0, 5);
 		setImages(

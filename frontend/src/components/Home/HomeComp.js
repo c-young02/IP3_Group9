@@ -4,11 +4,10 @@ import Modal from 'react-bootstrap/Modal';
 
 function HomeComp() {
 	document.title = 'NASA APIs';
+	const APOD = process.env.REACT_APP_APOD_KEY;
 
 	useEffect(() => {
-		fetch(
-			'https://api.nasa.gov/planetary/apod?api_key=N19AA6NPWqnzmEEazzX9ZamcIOcTgTfvqL1LKaf3'
-		)
+		fetch(APOD)
 			.then((res) => res.json())
 			.then((data) => {
 				setData(data);

@@ -6,14 +6,15 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function MapComp() {
+	const EONETKey = process.env.REACT_APP_EONET_KEY;
+	const MapBoxKey = process.env.REACT_APP_MAPBOX_KEY;
+
 	document.title = 'Earth Events';
 
 	//Fetches data from the EONET API
 	const [event, setEvent] = useState([]);
 	async function fetchEvent() {
-		const res = await fetch(
-			`https://eonet.gsfc.nasa.gov/api/v2.1/events?days=365`
-		);
+		const res = await fetch(EONETKey);
 		const { events } = await res.json();
 		setEvent(events);
 	}
@@ -48,7 +49,7 @@ function MapComp() {
 		//Creates map
 		<Map
 			{...viewport}
-			mapboxAccessToken="pk.eyJ1IjoiYy15b3VuZzAyIiwiYSI6ImNsZXhjd2xqOTI5cHozeXAxbG02NndlNWUifQ.GcKdJYrL-O6qCKW1UK4dMQ" //todo make environment variable
+			mapboxAccessToken={MapBoxKey}
 			onMove={(evt) => setViewPort(evt.viewport)}
 			mapStyle="mapbox://styles/c-young02/clf2kthzf006g01ln8gmkfiv0"
 		>
