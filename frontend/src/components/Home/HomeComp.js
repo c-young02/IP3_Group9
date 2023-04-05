@@ -25,8 +25,8 @@ function HomeComp() {
 
 	return (
 		<>
-			<div className="Home" class="container-fluid" height="100%">
-				<div className="text-center">
+			<div className="Home" height="100%">
+				<div className="text-center d-inline-flex px-5">
 					<h2>
 						Welcome to "Project name", an interactive website showcasing NASA
 						APIs. The collection of APIs were hand-picked to showcase the
@@ -42,7 +42,7 @@ function HomeComp() {
 						width="900"
 						onClick={handleShow}
 					></img>
-					<h4 class="text-center">
+					<h4 class="text-center p-2">
 						NASA Astronomy Picture of the Day. Click the image for a full
 						description.
 					</h4>
