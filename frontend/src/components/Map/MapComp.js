@@ -67,7 +67,7 @@ function MapComp() {
 			<GeolocateControl trackUserLocation={true} label="Find My Location" />
 
 			{/* creates markers from the API*/}
-			{event.map((disaster) => (
+			{event?.map((disaster) => (
 				<Marker
 					key={disaster.id}
 					latitude={disaster.geometries[0].coordinates[1]}
@@ -133,7 +133,7 @@ function MapComp() {
 						</thead>
 						<tbody>
 							{/* Maps out objects from the array into the table */}
-							{event.map((list) => (
+							{event?.map((list) => (
 								<tr key={list.id}>
 									<td>
 										<img
