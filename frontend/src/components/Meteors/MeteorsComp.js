@@ -55,10 +55,11 @@ function MeteorsComp() {
         <div className="col"></div>
     </div>
 
+    {/*Iterates through asteroid array to display API data in a grid*/}
     <div className="row align-items-end pt-3">
         {asteroid?.map((asteroid) => (
           <div className="col-lg-3 pt-2">
-            <div className="card bg-dark" style={{ width: "16rem" }}>
+            <div className="card bg-dark" style={{ width: "17rem" }}>
                 <div className="card-header">
                   <h5>ID: {asteroid.id}</h5>
                   <h5>Name: {asteroid.name_limited}</h5>
@@ -66,9 +67,9 @@ function MeteorsComp() {
                 <div className="card-body">
                   <h5 className="card-text">Min Diameter: {asteroid.estimated_diameter.kilometers.estimated_diameter_min}km</h5>
                   <h5 className="card-text">Max Diameter: {asteroid.estimated_diameter.kilometers.estimated_diameter_max}km</h5>
-                  <h5 className="card-text">Velocity: {asteroid.close_approach_data.relative_velocity}</h5>
-                  <h5 className="card-text">Closest Date: {asteroid.close_approach_data.close_approach_date}</h5>
-                  <h5 className="card-text">Miss Distance: {asteroid.close_approach_data.miss_distance}</h5>
+                  <h5 className="card-text">Velocity: {asteroid.close_approach_data[0].relative_velocity.kilometers_per_second}</h5>
+                  <h5 className="card-text">Closest Date: {asteroid.close_approach_data[0].close_approach_date}</h5>
+                  <h5 className="card-text">Miss Distance: {asteroid.close_approach_data[0].miss_distance.lunar}</h5>
                 </div>
             </div>
           </div>
