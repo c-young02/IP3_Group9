@@ -34,15 +34,15 @@ function HomeComp() {
 						options.
 					</h2>
 				</div>
-				<div class="text-center">
+				<div className="text-center">
 					<img
-						class="img-fluid"
+						className="img-fluid"
 						alt=""
 						src={data.url}
 						width="900"
 						onClick={handleShow}
 					></img>
-					<h4 class="text-center p-2">
+					<h4 class="text-center">
 						NASA Astronomy Picture of the Day. Click the image for a full
 						description.
 					</h4>
