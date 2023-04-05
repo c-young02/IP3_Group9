@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-import MeteorDate from './MeteorDate';
+import Form from 'react-bootstrap/Form';
 
 function MeteorsComp() {
     document.title = 'Near Earth Asteroid';
@@ -21,9 +21,12 @@ function MeteorsComp() {
         fetchAsteroid();
     }, []);
 
+    const [date, setDate] = useState(new Date());
+
   return(
 
-    <div className="container" style={{ margin: "2em"}}>
+    //displays page heading, creates buttons, creates date select and creates dropdown menu
+    <div className="container row align-items-start pt-3" style={{ margin: "2em"}}>
       <h1 className="text-center">Meteor Information</h1>
       <div className="row pt-3 d-flex">
         <div className="col"></div>
@@ -32,8 +35,14 @@ function MeteorsComp() {
             <Button variant="secondary">List View</Button>
             <Button variant="secondary">Graph View</Button>
           </ButtonGroup>
-          <ButtonGroup className="me-2" aria-label="Second group">
-            <MeteorDate />
+          <ButtonGroup className="me-2" aria-label="Second group"> 
+          <Form.Control
+            type="date"
+            name="datepick"
+            placeholder="DateRange"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
           </ButtonGroup>
           <ButtonGroup aria-label="Third group">
           <DropdownButton as={ButtonGroup} title="Select Asteroid" id="bg-nested-dropdown" variant="secondary">
@@ -44,30 +53,29 @@ function MeteorsComp() {
           </ButtonGroup>
         </div>
         <div className="col"></div>
-      </div>
+    </div>
 
-      <div className="meteorsList">
-      {asteroid?.map((asteroid) => (
-        <div class="col">
-            <div class="card bg-dark col-lg-4" style={{ width: "18rem" }}>
-                <div class="card-header">
-                    <h4>Meteor Name: {asteroid.name_limited}</h4>
+    <div className="row align-items-end pt-3">
+        {asteroid?.map((asteroid) => (
+          <div className="col-lg-3 pt-2">
+            <div className="card bg-dark" style={{ width: "16rem" }}>
+                <div className="card-header">
+                  <h5>ID: {asteroid.id}</h5>
+                  <h5>Name: {asteroid.name_limited}</h5>
                 </div>
-                <div class="card-body">
-                    <h5>Meteor ID: {asteroid.id}</h5>
-                    <h5 class="card-text">Min Diameter: {asteroid.estimated_diameter.kilometers.estimated_diameter_min}km</h5>
-                    <h5 class="card-text">Max Diameter: {asteroid.estimated_diameter.kilometers.estimated_diameter_max}km</h5>
-                    <h5 class="card-text">Velocity: {asteroid.close_approach_data.relative_velocity}</h5>
-                    <h5 class="card-text">Closest Date: {asteroid.close_approach_data.close_approach_date}</h5>
-                    <h5 class="card-text">Miss Distance: {asteroid.close_approach_data.miss_distance}</h5>
-                    <h5 class="card-text">Potentially Hazardous: {asteroid.is_potentially_hazardous_asteroid}</h5>
+                <div className="card-body">
+                  <h5 className="card-text">Min Diameter: {asteroid.estimated_diameter.kilometers.estimated_diameter_min}km</h5>
+                  <h5 className="card-text">Max Diameter: {asteroid.estimated_diameter.kilometers.estimated_diameter_max}km</h5>
+                  <h5 className="card-text">Velocity: {asteroid.close_approach_data.relative_velocity}</h5>
+                  <h5 className="card-text">Closest Date: {asteroid.close_approach_data.close_approach_date}</h5>
+                  <h5 className="card-text">Miss Distance: {asteroid.close_approach_data.miss_distance}</h5>
                 </div>
             </div>
-        </div>
-      ))}
-		  </div>
+          </div>
+        ))}
+	    </div>
 
-    </div>        
+  </div>        
   )
 }
 
