@@ -124,30 +124,32 @@ function MapComp() {
 					{/* Headings for the sections */}
 
 					<div className="table table-hover">
-						<thead>
-							<tr>
-								<td> Icon </td>
-								<td> Name </td>
-								<td> Date/Time </td>
-							</tr>
-						</thead>
-						<tbody>
-							{/* Maps out objects from the array into the table */}
-							{event?.map((list) => (
-								<tr key={list.id}>
-									<td>
-										<img
-											className="list-icon"
-											//All images acquired from https://www.flaticon.com/icons
-											src={`../images/${list.categories[0].id}.png`}
-											alt="Icon"
-										/>{' '}
-									</td>
-									<td> {list.title} </td>
-									<td> {list.geometries[0].date} </td>
+						<table>
+							<thead>
+								<tr>
+									<td> Icon </td>
+									<td> Name </td>
+									<td> Date/Time </td>
 								</tr>
-							))}
-						</tbody>
+							</thead>
+							<tbody>
+								{/* Maps out objects from the array into the table */}
+								{event?.map((list) => (
+									<tr key={list.id}>
+										<td>
+											<img
+												className="list-icon"
+												//All images acquired from https://www.flaticon.com/icons
+												src={`../images/${list.categories[0].id}.png`}
+												alt="Icon"
+											/>{' '}
+										</td>
+										<td> {list.title} </td>
+										<td> {list.geometries[0].date} </td>
+									</tr>
+								))}
+							</tbody>
+						</table>
 					</div>
 				</Offcanvas.Body>
 			</Offcanvas>

@@ -28,7 +28,7 @@ function MeteorsComp() {
 			<div className="MeteorsGrid">
 				<div className="row align-items-end pt-3">
 					{asteroid?.map((asteroid) => (
-						<div className="col-lg-3 pt-2">
+						<div className="col-lg-3 pt-2" key={asteroid.id}>
 							<div className="card bg-dark" style={{ width: '17rem' }}>
 								<div className="card-header">
 									<h5>ID: {asteroid.id}</h5>
