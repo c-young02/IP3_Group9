@@ -9,8 +9,8 @@
 
 .home{
   display: flex;
-  height: 100%;
   align-items: center;
+  height: 1000%;
   justify-content: center;
   font-size: 3rem;
   background-color: #323a45;
@@ -18,14 +18,9 @@
   color: #fff;
 }
 
-.rover{
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  background-color: #323a45;
-  color: #fff;
+.Home{
+  padding: 2%;
+  height: 95vh;
 }
 
 .meteors{
@@ -39,8 +34,23 @@
   color: #fff;
 }
 
-.about,
 .rover {
+  display: flex;
+  height: 95vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background-color: #323a45;
+  color: #fff;
+}
+
+.RoverCarousel{
+  width: 100%;
+  max-width:750px;
+  max-height: 18%;
+}
+
+.about {
   display: flex;
   height: 95vh;
   align-items: center;
@@ -74,7 +84,11 @@
 }
 
 @media screen and (max-width: 960px) {
-  .home,
+  .home {
+    padding-top: 10%;
+    float:none
+  }
+
   .about,
   .meteors,
   .rover {
@@ -84,5 +98,17 @@
   .page-icon {
     margin-left: 1rem;
     font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .RoverCarousel{
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    align-content: center;
+    justify-content: center;
+    margin-left: 10%;
   }
 }
