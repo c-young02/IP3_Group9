@@ -1,6 +1,8 @@
 import { AiOutlineGithub } from 'react-icons/ai';
 
 function AboutComp() {
+	document.title = 'About Us';
+
 	const Members = [
 		{ name: 'Stacey', role: 'Frontend Developer & Project Manager' },
 		{ name: 'Callum', role: 'Frontend Developer & Designer' },

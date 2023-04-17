@@ -53,7 +53,7 @@ function Navbar() {
 									}
 									onClick={closeMobileMenu}
 								>
-									Meteors
+									Asteroids
 								</NavLink>
 							</li>
 
