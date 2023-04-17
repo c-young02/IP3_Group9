@@ -25,7 +25,7 @@ function HomeComp() {
 
 	return (
 		<>
-			<div className="Home" height="100%">
+			<div className="Home">
 				<div className="text-center d-inline-flex px-5">
 					<h2>
 						Welcome to "Project name", an interactive website showcasing NASA
@@ -36,13 +36,13 @@ function HomeComp() {
 				</div>
 				<div className="text-center">
 					<img
-						className="img-fluid"
+						className="img-fluid pt-4"
 						alt=""
 						src={data.url}
 						width="900"
 						onClick={handleShow}
 					></img>
-					<h4 className="text-center">
+					<h4 className="text-center pt-2">
 						NASA Astronomy Picture of the Day. Click the image for a full
 						description.
 					</h4>

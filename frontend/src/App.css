@@ -9,13 +9,18 @@
 
 .home{
   display: flex;
-  height: 100%;
   align-items: center;
+  height: 1000%;
   justify-content: center;
   font-size: 3rem;
   background-color: #323a45;
   background-size: cover;
   color: #fff;
+}
+
+.Home{
+  padding: 2%;
+  height: 95vh;
 }
 
 .rover{
@@ -74,7 +79,11 @@
 }
 
 @media screen and (max-width: 960px) {
-  .home,
+  .home {
+    padding-top: 10%;
+    float:none
+  }
+
   .about,
   .meteors,
   .rover {
