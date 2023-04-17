@@ -19,14 +19,15 @@ function RoverComp() {
     }, []);
 
     return (
+        <div className="Rover">
         <div className="Container">
-            <h1 className="text-center">Mars Rover Images</h1>
-            <div style= {{ display: 'block', width: 500, padding: 30 }}>
-                <Carousel>
+            <h1 className="text-center px-3">Mars Rover Images</h1>
+            <div style= {{ display: 'block', padding: 20 }}>
+                <Carousel className="RoverCarousel">
                     {rover?.map((rover) => (
                         <Carousel.Item key={rover.id} interval={null}>
                             <img 
-								className="d-block w-100 h-100"
+								className="d-block w-100 h-100 img-fluid"
 								src={rover.img_src} 
 								alt="Rover Images"
 							/>
@@ -34,6 +35,7 @@ function RoverComp() {
                     ))}
                 </Carousel>
             </div>
+        </div>
         </div>
     );
 }
