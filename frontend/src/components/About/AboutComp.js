@@ -1,29 +1,24 @@
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
+import { AiOutlineGithub } from 'react-icons/ai';
 
 function AboutComp() {
 	const Members = [
-		{ name: 'Callum', role: 'Frontend Developer, Designer' },
-		{ name: 'Stacey', role: 'Frontend Developer, Project Manager' },
-		{ name: 'Logan', role: 'Backend Developer, Designer' },
+		{ name: 'Stacey', role: 'Frontend Developer & Project Manager' },
+		{ name: 'Callum', role: 'Frontend Developer & Designer' },
+		{ name: 'Logan', role: 'Backend Developer & Designer' },
 		{ name: 'Darren', role: 'Backend Developer' },
 		{ name: 'Lauren', role: 'Report Writer' },
 		{ name: 'Dionne', role: 'Report Writer' },
 	];
 
 	return (
-		<div
-			className="container row align-items-start pt-3"
-			style={{ margin: '4em' }}
-		>
-			<h1 className="text-center">About Us</h1>
-
+		<div className="container row align-items-start">
+			<h1 className="display-1 text-center">About Us</h1>
 			<div className="row align-items-end px-5">
 				{Members?.map((member) => (
-					<div className="col-lg-4 pt-2">
-						<div className="card bg-dark" style={{ width: '20rem' }}>
-							<div className="card-header">
-								<h5>Name: {member.name}</h5>
+					<div key={member.name} className="col-lg-4 pt-2">
+						<div className="card bg-dark shadow" style={{ width: '20rem' }}>
+							<div className="card-header text-center">
+								<h3>{member.name}</h3>
 							</div>
 							<div className="card-body">
 								<h5 className="card-text">Role(s): {member.role}</h5>
@@ -32,6 +27,10 @@ function AboutComp() {
 					</div>
 				))}
 			</div>
+			<a href="https://github.com/c-young02/IP3_Group9" className="text-center">
+				<AiOutlineGithub />
+				GitHub Repository
+			</a>
 		</div>
 	);
 }

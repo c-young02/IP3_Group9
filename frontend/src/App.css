@@ -10,7 +10,6 @@
 .home{
   display: flex;
   align-items: center;
-  height: 1000%;
   justify-content: center;
   font-size: 3rem;
   background-color: #323a45;
@@ -20,7 +19,7 @@
 
 .Home{
   padding: 2%;
-  height: 95vh;
+  height: 94vh;
 }
 
 .meteors{
@@ -36,7 +35,7 @@
 
 .rover {
   display: flex;
-  height: 95vh;
+  height: 94vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
@@ -52,7 +51,7 @@
 
 .about {
   display: flex;
-  height: 95vh;
+  height: 94vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;

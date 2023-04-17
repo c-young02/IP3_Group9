@@ -24,7 +24,7 @@ function MeteorsComp() {
 			className="container row align-items-start pt-3"
 			style={{ margin: '2em' }}
 		>
-			<h1 className="text-center">Meteor Information</h1>
+			<h1 className="display-1 text-center">Meteor Information</h1>
 
 			{/*Iterates through asteroid array to display API data in a grid*/}
 			<div className="MeteorsGrid">
