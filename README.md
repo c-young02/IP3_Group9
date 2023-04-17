@@ -1,4 +1,4 @@
-# Integrate Project 3 - Group 9
+# Integrated Project 3 - Group 9
 ## How to run
 Go into the frontend directory and type
 ```
