@@ -28,7 +28,7 @@ function HomeComp() {
 			<div className="Home">
 				<div className="text-center d-inline-flex px-5">
 					<h2>
-						Welcome to "Project name", an interactive website showcasing NASA
+						Welcome to Space=Cool, an interactive website showcasing NASA
 						APIs. The collection of APIs were hand-picked to showcase the
 						breadth of NASA's open-source work. To begin, select from the menu
 						options.
