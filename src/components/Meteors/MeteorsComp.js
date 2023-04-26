@@ -37,17 +37,15 @@ function MeteorsComp() {
 								<div className="card-body">
 									<h5 className="card-text">
 										Min Diameter (km):&nbsp;
-										{
-											asteroid.estimated_diameter.kilometers
-												.estimated_diameter_min.toFixed(2)
-										}										
+										{asteroid.estimated_diameter.kilometers.estimated_diameter_min.toFixed(
+											2
+										)}
 									</h5>
 									<h5 className="card-text">
 										Max Diameter (km):&nbsp;
-										{
-											asteroid.estimated_diameter.kilometers
-												.estimated_diameter_max.toFixed(2)
-										}
+										{asteroid.estimated_diameter.kilometers.estimated_diameter_max.toFixed(
+											2
+										)}
 									</h5>
 									<h5 className="card-text">
 										Velocity (km/s):<br></br>
@@ -58,15 +56,11 @@ function MeteorsComp() {
 									</h5>
 									<h5 className="card-text">
 										Closest Date:&nbsp;
-										{
-											asteroid.close_approach_data[0].close_approach_date
-										}
+										{asteroid.close_approach_data[0].close_approach_date}
 									</h5>
 									<h5 className="card-text">
 										Miss Distance (LD):<br></br>
-										{
-											asteroid.close_approach_data[0].miss_distance.lunar
-										}
+										{asteroid.close_approach_data[0].miss_distance.lunar}
 									</h5>
 								</div>
 							</div>

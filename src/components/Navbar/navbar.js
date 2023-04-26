@@ -26,7 +26,7 @@ function Navbar() {
 								className="thenavigationbar-icon"
 								alt="logo"
 							/>
-							NASA APIs
+							Space=Cool
 						</Link>
 						<div className="menu-icon" onClick={handleClick}>
 							{click ? <FaTimes /> : <FaBars />}

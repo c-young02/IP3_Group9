@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 function HomeComp() {
-	document.title = 'NASA APIs';
+	document.title = 'Space=Cool';
 	const APOD = process.env.REACT_APP_APOD_KEY;
 
 	useEffect(() => {
@@ -28,10 +28,9 @@ function HomeComp() {
 			<div className="Home">
 				<div className="text-center d-inline-flex px-5">
 					<h2>
-						Welcome to Space=Cool, an interactive website showcasing NASA
-						APIs. The collection of APIs were hand-picked to showcase the
-						breadth of NASA's open-source work. To begin, select from the menu
-						options.
+						Welcome to Space=Cool, an interactive website showcasing NASA APIs.
+						The collection of APIs were hand-picked to showcase the breadth of
+						NASA's open-source work. To begin, select from the menu options.
 					</h2>
 				</div>
 				<div className="text-center">
