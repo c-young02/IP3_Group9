@@ -6,15 +6,15 @@ function MeteorsComp() {
 
 	//Fetches data from the Nasa NeoWs API
 	const [asteroid, setAsteroid] = useState([]);
-	async function fetchAsteroid() {
-		const res = await fetch(asteroidData);
-		const { near_earth_objects } = await res.json();
-		setAsteroid(near_earth_objects);
-	}
-
 	useEffect(() => {
+		async function fetchAsteroid() {
+			const res = await fetch(asteroidData);
+			const { near_earth_objects } = await res.json();
+			setAsteroid(near_earth_objects);
+		}
+
 		fetchAsteroid();
-	}, []);
+	}, [asteroidData]);
 
 	return (
 		//displays page heading, creates buttons, creates date select and creates dropdown menu

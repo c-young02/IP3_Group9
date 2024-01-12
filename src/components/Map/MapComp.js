@@ -13,15 +13,15 @@ function MapComp() {
 
 	//Fetches data from the EONET API
 	const [event, setEvent] = useState([]);
-	async function fetchEvent() {
-		const res = await fetch(EONETKey);
-		const { events } = await res.json();
-		setEvent(events);
-	}
-
 	useEffect(() => {
+		async function fetchEvent() {
+			const res = await fetch(EONETKey);
+			const { events } = await res.json();
+			setEvent(events);
+		}
+
 		fetchEvent();
-	}, []);
+	}, [EONETKey]);
 
 	//Sets desired map initial location and style
 	const [viewport, setViewPort] = useState({

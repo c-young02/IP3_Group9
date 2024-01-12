@@ -9,15 +9,15 @@ function RoverComp() {
 
 	//Fetches data from the Mars Rover API
 	const [rover, setRover] = useState([]);
-	async function fetchRover() {
-		const res = await fetch(roverImages);
-		const { photos } = await res.json();
-		setRover(photos);
-	}
-
 	useEffect(() => {
+		async function fetchRover() {
+			const res = await fetch(roverImages);
+			const { photos } = await res.json();
+			setRover(photos);
+		}
+
 		fetchRover();
-	}, []);
+	}, [roverImages]);
 
 	const [selectedImage, setSelectedImage] = useState(null);
 	const [show, setShow] = useState(false);
