@@ -2,6 +2,10 @@
 
 Welcome to Space=Cool, a web application that brings you the wonders of space through various NASA APIs. Explore the cosmos with features like the Astronomy Picture of the Day, Near-Earth Asteroids, Earth Events, and Mars Rover Photos.
 
+## Viewing the Live Site
+
+You can view the live version of this project by clicking this [link](https://nasa-api-showcase.netlify.app/).
+
 ## Features
 
 - **Astronomy Picture of the Day**: Immerse yourself in the beauty of the cosmos by discovering the featured image selected by NASA for each day. Accompanied by a concise explanation crafted by a professional astronomer.
